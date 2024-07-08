@@ -1,0 +1,16 @@
+{
+  "name": "broadcaster-main",
+  "version": "1.0.0",
+  "description": "1. starting server - ```node Server.js``` 2. starting client - ```node client.js``` //create as much as clients you need",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "devStart": "nodemon run server.js",
+    "cli" : "nodemon run Client.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
