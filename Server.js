@@ -1,8 +1,11 @@
 import { createServer } from 'net';
 import { createInterface } from 'readline';
 
-const serverPort = 8080;
+const serverPort =  8080; // Port for the server
 let clients = [];
+
+const atleast_n = 2; // give the atleast clients
+const atmost_n = 5; // give the atmost clients
 
 const rl = createInterface({
   input: process.stdin,
@@ -37,10 +40,10 @@ server.on('error', (err) => {
 });
 
 function broadcastMessage(message) {
-  let count =0;
-  if (clients.length > 2) {
+  let count = 0;
+  if (clients.length > atleast_n) {
     clients.forEach((client) => {
-      if(count < 3) {
+      if(count < atmost_n) {
         client.write(message);
         count+=1;
       }
